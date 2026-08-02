@@ -88,6 +88,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Lotus Accounting" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Lotus Accounting" },
+      { name: "twitter:title", content: "Lotus Accounting" },
+      { property: "og:description", content: "Contabilidade, consultoria e inteligência de negócios para decisões empresariais seguras." },
+      { name: "twitter:description", content: "Contabilidade, consultoria e inteligência de negócios para decisões empresariais seguras." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97c37706-6d24-41be-a469-c7963e6a07de/id-preview-4f400484--70b78ada-d8bc-42f6-aa98-b49fe35214be.lovable.app-1785689412959.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97c37706-6d24-41be-a469-c7963e6a07de/id-preview-4f400484--70b78ada-d8bc-42f6-aa98-b49fe35214be.lovable.app-1785689412959.png" },
     ],
     links: [
       {
