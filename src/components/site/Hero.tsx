@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero.jpg";
 
 export function Hero() {
@@ -18,7 +19,7 @@ export function Hero() {
         alt="Profissionais colaborando em um escritório moderno"
         width={1920}
         height={1200}
-        className="absolute inset-0 h-[115%] w-full object-cover"
+        className="absolute inset-0 h-[115%] w-full object-cover object-[center_65%]"
         style={{ transform: `translate3d(0, -${offset}px, 0)` }}
       />
       <div className="absolute inset-0" style={{ backgroundImage: "var(--gradient-hero)" }} />
@@ -41,20 +42,20 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#orcamento"
+            <Link
+              to="/orcamento"
               className="glass-cta inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-white"
             >
               Consultoria gratuita
               <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#servicos"
+            </Link>
+            <Link
+              to="/servicos"
               className="glass-cta inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-white"
               style={{ background: "color-mix(in oklab, white 8%, transparent)" }}
             >
               Explorar serviços
-            </a>
+            </Link>
           </div>
         </div>
       </div>

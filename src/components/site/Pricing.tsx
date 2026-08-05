@@ -82,7 +82,7 @@ export function Pricing() {
 
                 <h3
                   className={`font-display text-sm uppercase tracking-[0.2em] ${
-                    plan.highlight ? "text-white/70" : "text-steel"
+                    plan.highlight ? "text-white/70" : "text-bronze"
                   }`}
                 >
                   {plan.name}
@@ -119,7 +119,7 @@ export function Pricing() {
                     >
                       <Check
                         className={`mt-0.5 h-4 w-4 shrink-0 ${
-                          plan.highlight ? "text-white" : "text-steel"
+                          plan.highlight ? "text-white" : "text-bronze"
                         }`}
                       />
                       {feature}
@@ -132,7 +132,7 @@ export function Pricing() {
                   className={`mt-9 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                     plan.highlight
                       ? "glass-cta text-white"
-                      : "bg-primary text-primary-foreground hover:opacity-90"
+                      : "bg-bronze text-white hover:opacity-90"
                   }`}
                 >
                   {plan.name === "Enterprise" ? "Falar com especialista" : "Começar agora"}

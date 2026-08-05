@@ -1,14 +1,7 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import lotusWhite from "@/assets/lotus-white.png.asset.json";
-
-const quickLinks = [
-  { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Planos", href: "#planos" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Notícias", href: "#noticias" },
-  { label: "Orçamento", href: "#orcamento" },
-];
+import { contact, navLinks } from "./site-data";
 
 const socials = [
   { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
@@ -25,10 +18,10 @@ export function Footer() {
             <img
               src={lotusWhite.url}
               alt="Lotus Accounting"
-              width={180}
-              height={54}
+              width={300}
+              height={90}
               loading="lazy"
-              className="h-9 w-auto"
+              className="h-16 w-auto sm:h-20"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/65">
               Contabilidade, consultoria e inteligência de negócios para empresas que decidem com
@@ -42,7 +35,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={social.label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/20 text-white/75 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:text-white"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white/75 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sand/25 hover:text-white"
                 >
                   <social.icon className="h-4 w-4" />
                 </a>
@@ -51,35 +44,39 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-xs uppercase tracking-[0.2em] text-white/50">
-              Navegação
-            </h3>
+            <h3 className="font-display text-xs uppercase tracking-[0.2em] text-sand">Navegação</h3>
             <ul className="mt-5 grid gap-3 text-sm text-white/70">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:text-white">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="transition-colors hover:text-sand">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-display text-xs uppercase tracking-[0.2em] text-white/50">
-              Contato
-            </h3>
+            <h3 className="font-display text-xs uppercase tracking-[0.2em] text-sand">Contato</h3>
             <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-white/70">
-              <li>Av. Brigadeiro Faria Lima, 3.477 — 12º andar, São Paulo — SP</li>
-              <li>+55 (11) 4002-8922</li>
-              <li>contato@lotusaccounting.com.br</li>
-              <li>Seg. a sex., 9h às 18h</li>
+              <li>{contact.addressShort}</li>
+              <li>
+                <a href={contact.phoneHref} className="transition-colors hover:text-sand">
+                  {contact.phone}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${contact.email}`} className="transition-colors hover:text-sand">
+                  {contact.email}
+                </a>
+              </li>
+              <li>{contact.hoursShort}</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/12 pt-7 text-xs text-white/45">
-          © {new Date().getFullYear()} Lotus Accounting. Todos os direitos reservados.
+        <div className="mt-14 pt-7 text-xs text-white/45">
+          © {new Date().getFullYear()} Lotus Contabilidade. Todos os direitos reservados.
         </div>
       </div>
     </footer>

@@ -49,7 +49,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <p ref={ref} className="font-display text-4xl font-semibold text-foreground sm:text-5xl">
       {formatted}
-      <span className="text-steel">{suffix}</span>
+      <span className="text-bronze">{suffix}</span>
     </p>
   );
 }
@@ -78,8 +78,8 @@ export function WhyUs() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {advantages.map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
-              <div className="flex h-full items-center gap-3 rounded-2xl border border-border bg-card px-5 py-5 transition-colors duration-300 hover:border-steel/50">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-bronze">
+              <div className="soft-panel flex h-full items-center gap-3 rounded-2xl px-5 py-5">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-bronze/12 text-bronze">
                   <item.icon className="h-4 w-4" />
                 </span>
                 <p className="min-w-0 text-sm font-medium leading-snug text-foreground">

@@ -25,7 +25,7 @@ const fields = [
 ] as const;
 
 const inputClass =
-  "w-full rounded-2xl border border-input bg-surface px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-steel focus:ring-4 focus:ring-steel/15";
+  "w-full rounded-2xl border-0 bg-surface px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-bronze focus:ring-4 focus:ring-bronze/15";
 
 export function QuoteForm() {
   const [values, setValues] = useState<Record<string, string>>({});
@@ -53,7 +53,7 @@ export function QuoteForm() {
         <Reveal delay={100}>
           <form
             onSubmit={handleSubmit}
-            className="mt-12 rounded-[2rem] border border-border bg-card p-8 shadow-[var(--shadow-soft)] sm:p-12"
+            className="soft-panel mt-12 rounded-[2rem] p-8 sm:p-12"
           >
             <div className="grid gap-6 sm:grid-cols-2">
               {fields.map((field) => (
@@ -97,7 +97,7 @@ export function QuoteForm() {
 
             <button
               type="submit"
-              className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 sm:w-auto"
+              className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-bronze px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 sm:w-auto"
             >
               Solicitar meu orçamento
             </button>

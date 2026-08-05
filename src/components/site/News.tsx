@@ -74,7 +74,7 @@ export function News() {
                   </p>
                   <a
                     href="#noticias"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-steel transition-all duration-300 group-hover:gap-2.5"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-bronze transition-all duration-300 group-hover:gap-2.5"
                   >
                     Ler mais
                     <ArrowRight className="h-4 w-4" />

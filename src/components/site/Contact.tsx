@@ -1,28 +1,21 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal, SectionHeading } from "./primitives";
+import { contact } from "./site-data";
 
 const details = [
-  {
-    icon: MapPin,
-    label: "Endereço",
-    value: "Av. Brigadeiro Faria Lima, 3.477 — 12º andar\nItaim Bibi, São Paulo — SP",
-  },
-  { icon: Phone, label: "Telefone", value: "+55 (11) 4002-8922" },
-  { icon: Mail, label: "E-mail", value: "contato@lotusaccounting.com.br" },
-  {
-    icon: Clock,
-    label: "Horário de atendimento",
-    value: "Segunda a sexta, 9h às 18h\nSábados, 9h às 12h",
-  },
+  { icon: MapPin, label: "Endereço", value: contact.address },
+  { icon: Phone, label: "Telefone", value: contact.phone, href: contact.phoneHref },
+  { icon: Mail, label: "E-mail", value: contact.email, href: `mailto:${contact.email}` },
 ];
 
 export function Contact() {
   return (
-    <section id="contato" className="py-24 sm:py-32">
+    <section id="contato" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Contato"
-          title="Vamos conversar sobre a sua empresa"
+          title="Fale com a nossa equipe"
+          description="Atendimento presencial em Águas Claras (DF) e remoto para empresas de todo o Brasil."
           align="left"
         />
 
@@ -30,33 +23,67 @@ export function Contact() {
           <Reveal>
             <div className="grid gap-4">
               {details.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex gap-4 rounded-3xl border border-border bg-card p-6 transition-colors duration-300 hover:border-steel/50"
-                >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-secondary text-steel">
+                <div key={item.label} className="soft-panel flex gap-4 rounded-3xl p-6">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-bronze/12 text-bronze">
                     <item.icon className="h-4 w-4" />
                   </span>
                   <div className="min-w-0">
                     <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
                       {item.label}
                     </p>
-                    <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-foreground">
-                      {item.value}
-                    </p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="mt-1.5 block text-sm leading-relaxed text-foreground transition-colors hover:text-bronze"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-foreground">
+                        {item.value}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
+
+              <div className="soft-panel rounded-3xl p-6">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-bronze/12 text-bronze">
+                    <Clock className="h-4 w-4" />
+                  </span>
+                  <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    Horário de funcionamento
+                  </p>
+                </div>
+                <ul className="mt-5 grid gap-2 text-sm">
+                  {contact.hours.map((item) => (
+                    <li key={item.day} className="flex items-center justify-between gap-4">
+                      <span className="text-muted-foreground">{item.day}</span>
+                      <span className="font-medium text-foreground">{item.time}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-bronze px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+              >
+                Falar no WhatsApp
+              </a>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="h-full min-h-[380px] overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-soft)]">
+            <div className="h-full min-h-[420px] overflow-hidden rounded-[2rem]">
               <iframe
-                title="Mapa da localização da Lotus Accounting"
-                src="https://www.google.com/maps?q=Av.%20Brigadeiro%20Faria%20Lima%203477%20S%C3%A3o%20Paulo&output=embed"
+                title="Mapa da localização da Lotus Contabilidade"
+                src={contact.mapsQuery}
                 loading="lazy"
-                className="h-full min-h-[380px] w-full border-0"
+                className="h-full min-h-[420px] w-full border-0"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
