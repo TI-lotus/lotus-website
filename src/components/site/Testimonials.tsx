@@ -39,9 +39,9 @@ export function Testimonials() {
           {testimonials.map((item, index) => (
             <Reveal key={item.name} delay={index * 100} className="h-full">
               <article className="card-premium flex h-full flex-col p-8">
-                <Quote className="h-7 w-7 text-steel/60" />
+                <Quote className="h-7 w-7 text-bronze/60" />
                 <p className="mt-5 flex-1 text-sm leading-relaxed text-foreground">{item.text}</p>
-                <div className="mt-7 flex min-w-0 items-center gap-4 border-t border-border pt-6">
+                <div className="mt-7 flex min-w-0 items-center gap-4 pt-6">
                   <img
                     src={item.image}
                     alt={item.name}

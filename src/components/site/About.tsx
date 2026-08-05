@@ -26,7 +26,7 @@ export function About() {
           <ul className="mt-8 grid gap-3">
             {pillars.map((item) => (
               <li key={item} className="flex items-center gap-3 text-sm text-foreground">
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-secondary text-steel">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-bronze/12 text-bronze">
                   <Check className="h-3.5 w-3.5" />
                 </span>
                 {item}
@@ -43,7 +43,7 @@ export function About() {
               width={1024}
               height={1280}
               loading="lazy"
-              className="col-span-3 row-span-6 h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+              className="col-span-3 row-span-6 h-full w-full rounded-3xl object-cover"
             />
             <img
               src={about2}
@@ -51,11 +51,11 @@ export function About() {
               width={1024}
               height={768}
               loading="lazy"
-              className="col-span-2 row-span-3 h-full w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
+              className="col-span-2 row-span-3 h-full w-full rounded-3xl object-cover"
             />
-            <div className="col-span-2 row-span-3 flex flex-col justify-center rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <p className="font-display text-4xl font-semibold text-foreground">+18</p>
-              <p className="mt-2 text-sm leading-snug text-muted-foreground">
+            <div className="col-span-2 row-span-3 flex flex-col justify-center rounded-3xl p-6" style={{ backgroundImage: "var(--gradient-warm)" }}>
+              <p className="font-display text-4xl font-semibold text-white">+18</p>
+              <p className="mt-2 text-sm leading-snug text-white/80">
                 anos apoiando decisões financeiras de empresas em crescimento.
               </p>
             </div>

@@ -42,7 +42,7 @@ export function ThemeToggle({
       aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
       className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border transition-all duration-300 hover:scale-105 ${
         onLight
-          ? "border-border bg-secondary text-foreground"
+          ? "bg-secondary text-foreground"
           : "border-white/25 bg-white/10 text-white backdrop-blur-md hover:bg-white/20"
       }`}
     >
