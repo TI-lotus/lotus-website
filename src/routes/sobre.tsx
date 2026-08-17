@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { About } from "@/components/site/About";
+import { AboutDetails } from "@/components/site/AboutDetails";
 import { WhyUs } from "@/components/site/WhyUs";
 import building from "@/assets/office-warm.jpg";
 
