@@ -30,21 +30,15 @@ export function PageHeader({
   image: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
+    <section className="relative isolate flex min-h-[72vh] items-end overflow-hidden pt-36 pb-16 sm:min-h-[78vh] sm:pt-44 sm:pb-24">
       <img
         src={image}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, color-mix(in oklab, black 62%, transparent) 0%, color-mix(in oklab, var(--bronze) 72%, transparent) 100%)",
-        }}
-      />
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
         <p className="font-display text-xs uppercase tracking-[0.22em] text-sand">{eyebrow}</p>
         <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.1] text-white sm:text-5xl">
           {title}
