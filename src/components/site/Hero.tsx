@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0 h-[115%] w-full object-cover object-[center_65%]"
         style={{ transform: `translate3d(0, -${offset}px, 0)` }}
       />
-      <div className="absolute inset-0" style={{ backgroundImage: "var(--gradient-hero)" }} />
+      <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 pb-24 pt-36 sm:px-8">
         <div className="max-w-3xl">

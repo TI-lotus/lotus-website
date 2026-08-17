@@ -25,6 +25,24 @@ const articles = [
     title: "Indicadores que todo gestor deveria acompanhar mensalmente",
     text: "Da margem de contribuição ao ciclo de caixa: os números que revelam a saúde real do negócio.",
   },
+  {
+    image: news2,
+    category: "Tributário",
+    title: "Simples Nacional, Lucro Presumido ou Real: como comparar",
+    text: "Critérios práticos de faturamento, margem e folha para escolher o regime menos oneroso no próximo ano.",
+  },
+  {
+    image: news3,
+    category: "Gestão",
+    title: "Pró-labore e distribuição de lucros sem risco fiscal",
+    text: "Como remunerar sócios de forma eficiente respeitando as exigências da Receita e da Previdência.",
+  },
+  {
+    image: news1,
+    category: "Compliance",
+    title: "Calendário de obrigações: prazos que não podem passar",
+    text: "Um panorama das entregas mensais e anuais e do que fazer quando um prazo é perdido.",
+  },
 ];
 
 export function News() {
