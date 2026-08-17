@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
-import { News } from "@/components/site/News";
-import image from "@/assets/news-1.jpg";
+import { Services } from "@/components/site/Services";
+import building from "@/assets/about-2.jpg";
 
-const title = "Notícias e conteúdo | Lotus Contabilidade";
+const title = "Serviços | Lotus Contabilidade";
 const description =
-  "Análises objetivas sobre contabilidade, tributos, finanças e estratégia empresarial, com newsletter mensal.";
+  "Contabilidade empresarial, planejamento tributário, folha de pagamento, consultoria financeira, BI e CFO as a Service.";
 
-export const Route = createFileRoute("/noticias")({
+export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
       { title },
@@ -25,12 +25,12 @@ function Page() {
   return (
     <SiteLayout>
       <PageHeader
-        eyebrow="Notícias"
-        title="Conteúdo para decisões melhores"
-        description="Acompanhe mudanças tributárias, boas práticas financeiras e leitura de indicadores."
-        image={image}
+        eyebrow="Serviços"
+        title="Soluções completas para a gestão financeira"
+        description="Do compliance contábil à direção financeira estratégica, com um time dedicado ao seu contexto."
+        image={building}
       />
-      <News />
+      <Services />
     </SiteLayout>
   );
 }
