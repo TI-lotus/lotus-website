@@ -23,6 +23,24 @@ const testimonials = [
     image: person3,
     text: "A estruturação do fluxo de caixa e os relatórios gerenciais nos deram base para abrir duas novas unidades com segurança. Parceria estratégica de verdade.",
   },
+  {
+    name: "Camila Rocha",
+    role: "Sócia, Clínica Vitalis",
+    image: person1,
+    text: "Migramos de regime tributário com total tranquilidade. Cada etapa foi explicada em linguagem simples, com projeções de impacto antes da decisão.",
+  },
+  {
+    name: "Eduardo Lima",
+    role: "Head de Operações, Delta Logística",
+    image: person2,
+    text: "O fechamento contábil passou a sair até o dia 10, com dashboards prontos. Hoje a diretoria discute resultado, e não mais planilha atrasada.",
+  },
+  {
+    name: "Juliana Prado",
+    role: "Fundadora, Ateliê Prado",
+    image: person3,
+    text: "Comecei como MEI e cresci com a Lotus ao lado. Suporte próximo, respostas no mesmo dia e um cuidado real com o meu negócio.",
+  },
 ];
 
 export function Testimonials() {
