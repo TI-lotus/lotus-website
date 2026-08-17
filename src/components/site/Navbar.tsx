@@ -28,15 +28,17 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
         solid ? "glass-panel border-b" : "border-b border-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center gap-6 px-5 py-3.5 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center gap-6 px-5 py-2 sm:px-8">
         <Link to="/" className="flex min-w-0 items-center">
-          <img
-            src={logo}
-            alt="Lotus Accounting"
-            width={260}
-            height={78}
-            className="h-16 w-auto transition-opacity duration-500 sm:h-20"
-          />
+          <span className="block h-7 overflow-hidden sm:h-8">
+            <img
+              src={logo}
+              alt="Lotus Accounting"
+              width={260}
+              height={78}
+              className="h-11 w-auto -translate-y-2 transition-opacity duration-500 sm:h-12 sm:-translate-y-2"
+            />
+          </span>
         </Link>
 
         <ul

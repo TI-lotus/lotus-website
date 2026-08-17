@@ -4,7 +4,7 @@ import { Footer } from "./Footer";
 
 export function SiteLayout({
   children,
-  overlay = false,
+  overlay = true,
 }: {
   children: ReactNode;
   overlay?: boolean;
