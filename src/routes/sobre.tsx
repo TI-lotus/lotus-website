@@ -33,6 +33,7 @@ function Page() {
         image={building}
       />
       <About />
+      <AboutDetails />
       <WhyUs />
     </SiteLayout>
   );
