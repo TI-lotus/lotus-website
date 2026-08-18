@@ -1,5 +1,7 @@
 export const LOGIN_URL = "https://lotusaccounting.lovable.app/";
 
+export const SLOGAN = "Transformando números em decisões";
+
 export const navLinks = [
   { label: "Início", to: "/" },
   { label: "Sobre", to: "/sobre" },
@@ -10,6 +12,13 @@ export const navLinks = [
   { label: "Orçamento", to: "/orcamento" },
   { label: "Contato", to: "/contato" },
 ] as const;
+
+export const company = {
+  legalName: "Lotus Contabilidade LTDA",
+  cnpj: "51.228.268/0001-16",
+  foundedYear: "2023",
+  instagram: "https://www.instagram.com/lotus.cont/",
+};
 
 export const contact = {
   address: "QS 1, Torre 3, Sala 1706 — Águas Claras\nBrasília — DF, 71950-770",
