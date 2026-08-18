@@ -183,6 +183,18 @@
   border: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
 }
 
+@utility glass-dark {
+  background: color-mix(in oklab, oklch(0.16 0.03 268) 62%, transparent);
+  backdrop-filter: blur(22px) saturate(160%);
+  border-bottom: 1px solid color-mix(in oklab, white 12%, transparent);
+}
+
+@utility glass-dark-soft {
+  background: color-mix(in oklab, oklch(0.14 0.03 268) 26%, transparent);
+  backdrop-filter: blur(14px) saturate(150%);
+  border-bottom: 1px solid color-mix(in oklab, white 8%, transparent);
+}
+
 @utility card-premium {
   background: color-mix(in oklab, var(--card) 92%, var(--sand) 8%);
   border: 0;

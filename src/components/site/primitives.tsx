@@ -34,11 +34,13 @@ export function SectionHeading({
       className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}
     >
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-semibold leading-[1.12] text-foreground sm:text-4xl md:text-[2.75rem]">
+      <h2 className="mt-3 text-2xl font-semibold leading-[1.15] text-foreground sm:text-3xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground">{description}</p>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          {description}
+        </p>
       ) : null}
     </Reveal>
   );
