@@ -2,16 +2,10 @@ import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
-export function SiteLayout({
-  children,
-  overlay = true,
-}: {
-  children: ReactNode;
-  overlay?: boolean;
-}) {
+export function SiteLayout({ children }: { children: ReactNode; overlay?: boolean }) {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar overlay={overlay} />
+      <Navbar />
       <main>{children}</main>
       <Footer />
     </div>
@@ -30,7 +24,7 @@ export function PageHeader({
   image: string;
 }) {
   return (
-    <section className="relative isolate flex min-h-[72vh] items-end overflow-hidden pt-36 pb-16 sm:min-h-[78vh] sm:pt-44 sm:pb-24">
+    <section className="relative isolate flex min-h-[92vh] items-end overflow-hidden pb-24 pt-36">
       <img
         src={image}
         alt=""

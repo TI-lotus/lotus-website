@@ -12,11 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
-import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as PlanosRouteImport } from './routes/planos'
-import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
+import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -33,11 +33,6 @@ const DepoimentosRoute = DepoimentosRouteImport.update({
   path: '/depoimentos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NoticiasRoute = NoticiasRouteImport.update({
-  id: '/noticias',
-  path: '/noticias',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const OrcamentoRoute = OrcamentoRouteImport.update({
   id: '/orcamento',
   path: '/orcamento',
@@ -48,14 +43,19 @@ const PlanosRoute = PlanosRouteImport.update({
   path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicosRoute = ServicosRouteImport.update({
-  id: '/servicos',
-  path: '/servicos',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosIndexRoute = ServicosIndexRouteImport.update({
+  id: '/servicos/',
+  path: '/servicos/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -63,32 +63,32 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
-  '/noticias': typeof NoticiasRoute
   '/orcamento': typeof OrcamentoRoute
   '/planos': typeof PlanosRoute
-  '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
-  '/noticias': typeof NoticiasRoute
   '/orcamento': typeof OrcamentoRoute
   '/planos': typeof PlanosRoute
-  '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/noticias': typeof NoticiasIndexRoute
+  '/servicos': typeof ServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
-  '/noticias': typeof NoticiasRoute
   '/orcamento': typeof OrcamentoRoute
   '/planos': typeof PlanosRoute
-  '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -96,42 +96,42 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/depoimentos'
-    | '/noticias'
     | '/orcamento'
     | '/planos'
-    | '/servicos'
     | '/sobre'
+    | '/noticias/'
+    | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contato'
     | '/depoimentos'
-    | '/noticias'
     | '/orcamento'
     | '/planos'
-    | '/servicos'
     | '/sobre'
+    | '/noticias'
+    | '/servicos'
   id:
     | '__root__'
     | '/'
     | '/contato'
     | '/depoimentos'
-    | '/noticias'
     | '/orcamento'
     | '/planos'
-    | '/servicos'
     | '/sobre'
+    | '/noticias/'
+    | '/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
-  NoticiasRoute: typeof NoticiasRoute
   OrcamentoRoute: typeof OrcamentoRoute
   PlanosRoute: typeof PlanosRoute
-  ServicosRoute: typeof ServicosRoute
   SobreRoute: typeof SobreRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
+  ServicosIndexRoute: typeof ServicosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -157,13 +157,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DepoimentosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/noticias': {
-      id: '/noticias'
-      path: '/noticias'
-      fullPath: '/noticias'
-      preLoaderRoute: typeof NoticiasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/orcamento': {
       id: '/orcamento'
       path: '/orcamento'
@@ -178,18 +171,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/servicos': {
-      id: '/servicos'
-      path: '/servicos'
-      fullPath: '/servicos'
-      preLoaderRoute: typeof ServicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos/': {
+      id: '/servicos/'
+      path: '/servicos'
+      fullPath: '/servicos/'
+      preLoaderRoute: typeof ServicosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -199,11 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
-  NoticiasRoute: NoticiasRoute,
   OrcamentoRoute: OrcamentoRoute,
   PlanosRoute: PlanosRoute,
-  ServicosRoute: ServicosRoute,
   SobreRoute: SobreRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
+  ServicosIndexRoute: ServicosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
